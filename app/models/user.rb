@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
+  validates :email, format: { with: /[\w\.]+@[\w\.]+/, message: 'Please inter valid email'}
+  validates :username, length: { maximum: 40, with: /[[:alnum:]]|\_|\s/ }
 
   validates :password, presence: true, on: :create
 
