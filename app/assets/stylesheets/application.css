@@ -21,9 +21,12 @@
  *= require text
  *= require grid
  *= require button
+ *= require form
  *
  * Подключаем стили, специфичные для конкретных view-файлов
+ *= require layout
  *= require users
+ *= require questions
  *
  * Подключаем сам файл application.css. Если бы ниже были правила css стилей,
  * они тоже попали бы в конечный стилевой файл.

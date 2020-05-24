@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
   def index
+    @users = [
+      User.new(
+        id: 1,
+        name: 'Vadim',
+        username: 'installero',
+        avatar_url: 'https://secure.gravatar.com/avatar/' \
+          '71269686e0f757ddb4f73614f43ae445?s=100'
+      ),
+      User.new(id: 2, name: 'Misha', username: 'aristofun')
+    ]
   end
 
   def new
@@ -19,5 +29,7 @@ class UsersController < ApplicationController
       Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020')),
       Question.new(text: 'В чем смысл?', created_at: Date.parse('24.05.2020'))
     ]
+
+    @new_question = Question.new
   end
 end
