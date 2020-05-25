@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.new(
   		name: 'Vasya',
-  	  username: 'inst',
+  	  username: 'insd',
       avatar_url: nil
   	)
 
