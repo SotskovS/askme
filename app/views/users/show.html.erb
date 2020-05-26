@@ -54,6 +54,21 @@
 
 <%# Блок со списком вопросов к пользователю %>
 <div class="column-3-4">
+  <div class="column-1-4 user-questions buffer-both count-questions">
+    <% def declension(num, form_1, form_2, form_3) %>
+      <% num_declesion = num % 10 %>
+      <% if num_declesion == 0 || num_declesion.between?(5,9) || num % 100 >= 11 && num % 100 < 20 %>
+        <% form_3 %>
+      <% elsif num_declesion == 1 %>
+        <% form_1 %>
+      <% else %>
+        <% form_2 %>
+      <% end %>
+    <% end %>
+    <% request = declension(@questions.size, "вопрос", "вопроса", "вопросов") %>
+    <%= "#{@questions.size} #{request} :" %>
+    </div>
+
   <div class="user-questions buffer-both">
     <div class="questions-list">
       <%# Обратите внимание, как мы делаем цикл по всем вопросам, точно %>

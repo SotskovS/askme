@@ -10,6 +10,11 @@
   padding: 10px 15px;
 }
 
+.count-questions {
+  float: none;
+  padding: 10px;
+}
+
 .question + .question {
   margin-top: 10px;
 }
