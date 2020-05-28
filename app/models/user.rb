@@ -9,14 +9,14 @@ class User < ApplicationRecord
   attr_accessor :password
 
   has_many :questions
+  before_create :downcase_character
 
   validates :username, presence:true, uniqueness: true,
-    format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
+      format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
   validates :email, presence:true, uniqueness: true, format: { with: REGEXP_EMAIL }
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
 
-  before_validation :downcase_character
   before_save :encrypt_password
 
   def self.hash_to_string(password_hash)
@@ -35,7 +35,6 @@ class User < ApplicationRecord
     self.username.downcase!
     self.email.downcase!
   end
-
 
   private
 
