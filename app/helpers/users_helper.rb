@@ -1,12 +1,12 @@
 module UsersHelper
-	def declension(num)
+  def declension(num, form_1, form_2, form_3)
     num_declesion = num % 10
   	if num_declesion == 0 || num_declesion.between?(5,9) || num % 100 >= 11 && num % 100 < 20
-      'вопросов'
+      form_3
     elsif num_declesion == 1
-      'вопрос'
+      form_1
     else
-      'вопроса'
+      form_2
     end
   end
 end

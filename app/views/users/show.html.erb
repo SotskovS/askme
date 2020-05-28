@@ -55,7 +55,8 @@
 <%# Блок со списком вопросов к пользователю %>
 <div class="column-3-4">
   <div class="column-1-4 user-questions buffer-both count-questions">
-    <%= "#{@questions.size} #{declension(@questions.size)} :" %>
+    <% word_declension = declension(@questions.size, "вопрос", "вопроса", "вопросов") %>
+    <%= "#{@questions.size} #{word_declension} :" %>
   </div>
 
   <div class="user-questions buffer-both">
