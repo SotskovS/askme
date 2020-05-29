@@ -29,15 +29,7 @@ class UsersController < ApplicationController
       Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020')),
       Question.new(text: 'Где мой броневичок?', created_at: Date.parse('27.05.2020')),
       Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020')),
-      # Question.new(text: 'Где мой броневичок?', created_at: Date.parse('27.05.2020')),
-      # Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020')),
-      # Question.new(text: 'Где мой броневичок?', created_at: Date.parse('27.05.2020')),
-      # Question.new(text: 'Где мой броневичок?', created_at: Date.parse('27.05.2020')),
-      # Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020')),
-      # Question.new(text: 'Где мой броневичок?', created_at: Date.parse('27.05.2020')),
-      # Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020')),
       Question.new(text: 'Как дела?', created_at: Date.parse('24.05.2020'))
-
     ]
 
     @new_question = Question.new
