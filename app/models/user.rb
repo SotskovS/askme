@@ -9,7 +9,7 @@ class User < ApplicationRecord
   attr_accessor :password
 
   has_many :questions
-  before_create :downcase_character
+  # before_create :downcase_character
 
   validates :username, presence:true, uniqueness: true,
       format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
