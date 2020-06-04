@@ -11,12 +11,12 @@ class User < ApplicationRecord
   has_many :questions
 
   validates :username, presence:true, uniqueness: true,
-    format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
+      format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
   validates :email, presence:true, uniqueness: true, format: { with: REGEXP_EMAIL }
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
 
-  before_save :encrypt_password
+  before_save :encrypt_password, :downcase_character
 
   def self.hash_to_string(password_hash)
     password_hash.unpack('H*')[0]
@@ -28,6 +28,11 @@ class User < ApplicationRecord
       password, user.password_salt, ITERATIONS, DIGEST.length, DIGEST))
     return user if user.password_hash == hashed_password
     nil
+  end
+
+  def downcase_character
+    self.username.downcase!
+    self.email.downcase!
   end
 
   private
