@@ -38,6 +38,11 @@
         <%= f.password_field :password_confirmation, class: 'form-text-field' %>
       </div>
 
+      <div class="form-field">
+        <%= f.label :favorite_color, 'Выбор цвета', class: 'form-label' %>
+        <%= f.color_field :favorite_color, class: 'form-text-field' %>
+      </div>
+
       <div class="form-action">
         <%= f.submit 'Зарегистрироваться', class: 'button button-small button-dark' %>
       </div>
