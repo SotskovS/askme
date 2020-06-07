@@ -6,7 +6,7 @@
       <% if @user.errors.any? %>
         <div class="form-errors">
           <ul>
-            <% for message in @user.errors.full_messages %>
+            <% @user.errors.full_messages.each do |message| %>
               <li class="form-error-message"><%= message %></li>
             <% end %>
           </ul>
@@ -47,8 +47,5 @@
         <%= f.submit 'Зарегистрироваться', class: 'button button-small button-dark' %>
       </div>
     <% end %>
-
-    <%# Подробнее про помощники для создания форм: %>
-    <%# http://guides.rubyonrails.org/form_helpers.html %>
   </div>
 </div>
