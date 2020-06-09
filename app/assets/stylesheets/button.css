@@ -29,3 +29,12 @@
   line-height: 15px;
   padding: 7px 15px;
 }
+
+.button-destroy {
+  background: #ff2400;
+  margin-top: 20px;
+}
+
+.button-destroy a {
+  color: #fff;
+}
