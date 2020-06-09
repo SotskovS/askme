@@ -2,4 +2,8 @@
 <% provide(:change_password, 'Если не хотите менять пароль — оставьте эти поля пустыми!') %>
 <% provide(:submit_title, 'Сохранить изменения') %>
 
+<div class="button button-destroy button-small">
+  <%=  link_to 'Удалить профиль', user_path(@user), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
+
 <%= render 'registration_form/form' %>
