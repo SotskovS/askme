@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   attr_accessor :password
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   validates :username, presence:true, uniqueness: true,
       format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
