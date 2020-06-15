@@ -10,13 +10,13 @@ class User < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
-  validates :username, presence:true, uniqueness: true,
+  validates :username, presence: true, uniqueness: true,
       format: { with: REGEXP_USERNAME }, length: { maximum: 40 }
-  validates :email, presence:true, uniqueness: true, format: { with: REGEXP_EMAIL }
+  validates :email, presence: true, uniqueness: true, format: { with: REGEXP_EMAIL }
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
 
-  before_save :encrypt_password, :downcase_character
+  before_save :encrypt_password
 
   def self.hash_to_string(password_hash)
     password_hash.unpack('H*')[0]
@@ -24,6 +24,7 @@ class User < ApplicationRecord
 
   def self.authenticate(email, password)
     user = find_by(email: email)
+    return unless user.present?
     hashed_password = User.hash_to_string(OpenSSL::PKCS5.pbkdf2_hmac(
       password, user.password_salt, ITERATIONS, DIGEST.length, DIGEST))
     return user if user.password_hash == hashed_password

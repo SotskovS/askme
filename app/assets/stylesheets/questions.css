@@ -46,3 +46,9 @@
 .question-actions a {
   margin-left: 10px;
 }
+
+.author-title {
+  font-style: italic;
+  font-size: 15px;
+  color: #288A41;
+}
