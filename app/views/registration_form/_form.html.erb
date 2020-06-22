@@ -44,7 +44,7 @@
 
       <div class="form-field color-form">
         <%= f.label :favorite_color, 'Выбор цвета', class: 'form-label' %>
-        <%= f.color_field :favorite_color, class: 'form-text-field', value: "#{@user[:favorite_color]}" %>
+        <%= f.color_field :favorite_color, class: 'form-text-field', value: @user.favorite_color %>
       </div>
 
       <div class="form-action">
