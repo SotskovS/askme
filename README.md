@@ -1,24 +1,16 @@
-# README
+Приложение для общения, возможность задать вопрос пользователю
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://valgeleask.herokuapp.com/
 
-Things you may want to cover:
+ruby '2.7.0' rails '6.0.3'
 
-* Ruby version
+Для запуска необходимо:
 
-* System dependencies
+nodejs > 10.0
+yarn
 
-* Configuration
+Запуск:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle
+bundle exec rake db:migrate
+bundle exec rails s
